@@ -1,5 +1,13 @@
 # Ngày 11 · Road Elements & SVM
 
+## Bài nộp của Phùng Danh Khoa · revision 5
+
+- [phungdanhkhoa-front.zip](phungdanhkhoa-front.zip)
+- [phungdanhkhoa-fisheye.zip](phungdanhkhoa-fisheye.zip)
+- [phungdanhkhoa-manifest.json](phungdanhkhoa-manifest.json)
+- [phungdanhkhoa-qc1-for-nguyencongquy.md](phungdanhkhoa-qc1-for-nguyencongquy.md)
+- [phungdanhkhoa-report.md](phungdanhkhoa-report.md)
+
 > Lab cá nhân, AI20K K5. Bạn gán nhãn phần tử đường theo guideline Road v1.0 trên CVAT của lớp: 12 ảnh camera trước BDD100K (A01–A12) và 8 ảnh fisheye WoodScape (B01–B08) là bắt buộc. Sau đó bạn kiểm lô của một bạn khác bằng Phiếu QC 1 và quyết định Release, Hold hoặc Rework. Nếu xong sớm, làm thêm ảnh A13–A16 và B09–B12 để lấy điểm thưởng. Không đưa ảnh lên app.cvat.ai.
 
 | M | Giờ | Việc | Lệnh kiểm tra |

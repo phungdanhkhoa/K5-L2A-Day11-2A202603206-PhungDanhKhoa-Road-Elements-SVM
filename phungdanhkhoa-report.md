@@ -1,8 +1,8 @@
 # Báo cáo cá nhân — Ngày 11
 Họ tên: Phùng Danh Khoa               Mã học viên: 2A202603206  
 Phiên bản CVAT (Help → About): v2.74.1  
-Guideline: Road v1.0    Lần nộp (`revision` trong manifest): 1  
-Thời điểm export (ngày giờ trên CVAT): 2026-11-20 15:14 UTC    Số lần nộp lại sau Rework: 0  
+Guideline: Road v1.0    Lần nộp (`revision` trong manifest): 2  
+Thời điểm export (ngày giờ trên CVAT): 2026-11-21 03:30 UTC    Số lần nộp lại sau Rework: 1  
 
 ## 1. Kiểm project
 | Mục | Đúng như guideline Road v1.0? | Ghi chú |
@@ -15,7 +15,7 @@ Cách đặt tag ảnh trên bản CVAT này: Chọn công cụ Tag ở thanh b�
 
 ## 2. Số lượng đã gán
 | Task | Ảnh | lane | road_curb | crosswalk | drivable | traffic_light | traffic_sign |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | front | 12 | 26 | 4 | 6 | 23 | 28 | 19 |
 | front-extra (đã làm 4 / 4) | 4 | 10 | 1 | 2 | 8 | 7 | 11 |
 | fisheye | 8 | 6 | 9 | 9 | 6 | 3 | 5 |
@@ -32,15 +32,20 @@ Cách đặt tag ảnh trên bản CVAT này: Chọn công cụ Tag ở thanh b�
 | B11 | `lane` | Có gán vạch ô đỗ xe và ô người khuyết tật thành `lane` không | Không gán `lane` (0 lane) | Guideline §4 xác định vạch ô đỗ xe không phải vạch làn xe chạy; gán nhãn lane ở đây là vi phạm bẫy QC1-03. |
 
 ## 4. Phiếu QC 1 nhận được
-Bạn kiểm lô của tôi: qc-verifier  Quyết định nhận được: Release  
+Bạn kiểm lô của tôi: Nguyễn Công Quý (2A202603149)    Quyết định nhận được: Rework (5 lỗi chính / 83 mục kiểm = 6,02% > ngưỡng 5%)  
 | Mã lỗi | Số lỗi | Đồng ý? | Đã sửa? |
 | --- | ---: | --- | --- |
 | QC1-01 (tag camera) | 0 | Đồng ý | Đã rà soát chuẩn 100% tag camera (đặc biệt B11 là fisheye_rear) |
-| QC1-02 (đủ L1/R1) | 0 | Đồng ý | Các cảnh báo lint ở A05, A06, A07, A09, A10, A14 đều là đoạn không có vạch sơn thực tế, đã đối chiếu và xác nhận miễn trừ |
-| QC1-03 (position) | 0 | Đồng ý | Đã chỉnh toàn bộ polyline trên camera hông sang `position = other` |
-| QC1-04 (chiều, tâm vạch) | 0 | Đồng ý | 100% vẽ từ gần ra xa, tâm vạch lệch $\le 5\text{ px}$ |
-| QC1-05 (vạch đứt) | 0 | Đồng ý | Nối liền thành 1 polyline duy nhất, không tách rời |
-| QC1-11 (fisheye arc & edge_zone) | 0 | Đồng ý | Polyline cong $\ge 4$ điểm, các box ngoài 80% bán kính đều bật `edge_zone = true` |
+| QC1-02 (đủ L1/R1) | 0 | Đồng ý | 8 cảnh báo lint ở A05, A06, A07, A09, A10, A14 đã xác nhận miễn trừ (đường không vạch, qua giao lộ, hoặc mép là dải phân cách bê tông/lề đường không có vạch sơn riêng) |
+| QC1-03 (position) | 0 | Đồng ý | Đã gán position = other cho toàn bộ polyline trên camera hông B06, B07, B08 |
+| QC1-04 (chiều, tâm vạch) | 1 | Đồng ý | **Đã sửa A09**: Rút điểm cuối của vạch đôi L2 về đoạn sơn còn nhìn thấy rõ tại `(459.5, 458.1)`, loại bỏ 2 điểm vươn vào vùng bóng/thân xe trắng |
+| QC1-05 (vạch đứt) | 0 | Đồng ý | Nối liền các nét đứt thành 1 polyline duy nhất từ gần ra xa |
+| QC1-07 (vùng lái, crosswalk) | 3 | Đồng ý | **Đã sửa 3 lỗi:**<br>1. **A08**: Nắn lại cạnh trái polygon `drivable direct` bám sát vạch L1 từ `(485.7, 281.5)` qua `(296.6, 314.0)` đến `(42.5, 357.6)` và mép ảnh trước khi nối xuống vạch qua đường, không cắt chéo lòng đường.<br>2. **A10**: Mở rộng polygon `drivable direct` xuyên qua xe phía trước theo quy tắc "đi được nếu đường trống", kéo dài hành lang làn bám vạch L1 lên tận $y=380$.<br>3. **B05**: Thu gọn cạnh xa của polygon `crosswalk` bám sát mép dải sơn ngựa vằn (chỉnh $y$ từ ~55–60 xuống ~70–75), không trèo lên vỉa hè/gờ đá. |
+| QC1-08 (đèn, màu) | 0 | Đồng ý | Đầy đủ thuộc tính color, type, facing |
+| QC1-09 (biển, facing, biển phụ) | 0 | Đồng ý | Tách riêng bounding box cho biển phụ, gán group = supplementary |
+| QC1-10 (hình in, đủ biển) | 0 | Đồng ý | Bounding box ôm sát mép biển |
+| QC1-11 (fisheye arc & edge_zone) | 1 | Đồng ý | **Đã sửa B03**: Bổ sung đoạn vạch trắng đứt gần camera từ `(958, 632)` qua `(915, 580)`, `(845, 460)` nối vào đoạn xa `(783, 357)` thành 1 polyline uốn cong (7 điểm, vẽ từ gần ra xa) |
+| QC1-12 (ZIP & XML) | 0 | Đồng ý | Cấu trúc file đạt chuẩn, lint pass 100% |
 
 ## 5. Kiểm file export
 | File | Mở lại được? | Số shape ảnh 1 (job / file) | Số shape ảnh 2 (job / file) | Tag camera có trong XML? |
@@ -64,7 +69,11 @@ Bạn kiểm lô của tôi: qc-verifier  Quyết định nhận được: Relea
 
 ## 7. Tự đánh giá
 - **Lỗi bạn mắc nhiều nhất hôm nay (theo mã QC1-xx), và cách tránh ở Ngày 20**:
-  Lỗi hay gặp nhất là để thuộc tính mặc định của CVAT (ví dụ polyline mới vẽ tự nhận `L1 / solid / white / single` và tag camera tự nhận `front` cho cả ảnh fisheye). Cách tránh: Luôn mở bảng Details ngay sau khi vẽ/đặt tag để đối chiếu và sửa thuộc tính, đặc biệt là kiểm tra quy tắc `position = other` cho camera hai bên.
+  Mắc lỗi QC1-07 (vùng lái dừng cụt ở cản sau xe thay vì xuyên qua theo quy tắc "đi được nếu đường trống", cạnh trái drivable cắt chéo qua vạch L1, và polygon crosswalk tràn lên vỉa hè) cùng với QC1-04 (vẽ vạch kéo quá dài vào vùng xe che) và QC1-11 (thiếu đoạn nét đứt gần camera trong fisheye).
+  Cách tránh:
+  - Khi gán vùng lái drivable: Luôn tuân thủ tuyệt đối quy tắc "đi được nếu đường trống", mở rộng hành lang làn xe chạy thẳng qua các phương tiện phía trước thay vì dừng cụt ở cản xe; bám sát vạch L1/R1 đã vẽ.
+  - Khi gán crosswalk: Phóng to tối đa để bắt mép sơn ngựa vằn, không để polygon tràn lên vỉa hè.
+  - Khi gán lane: Dừng ở điểm xa nhất còn thấy tâm vạch rõ ràng, không cố kéo dài vào thân/bóng xe; với vạch đứt trên fisheye, rà soát từ góc đáy ảnh lên để không sót các đoạn đứt ở cự ly gần.
 - **Nhãn của bạn đi vào model ở đâu? Chọn một lỗi đã sửa và nói nó làm model học sai thế nào**:
   Nhãn polyline `lane` đi vào model giữ làn (Lane Keeping Assist - LKA) / phát hiện làn đường (ví dụ mô hình row-anchor như Ultra-Fast-Lane-Detection). Nếu vạch sơn bị gán sai `position` (ví dụ gán L1 lên camera hông hoặc gán nhầm vạch tim đường thành vạch mép), model điều khiển sẽ nhầm lẫn tâm làn xe đang chạy, dẫn đến việc tính sai góc đánh lái và xe có thể chệch làn hoặc lao sang làn đối diện.
 

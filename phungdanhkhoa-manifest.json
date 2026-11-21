@@ -3,13 +3,13 @@
   "format": "CVAT for images 1.1",
   "guideline": "Road v1.0",
   "name": "phungdanhkhoa",
-  "revision": 1,
-  "created_at": "2026-11-20T15:42:59+00:00",
+  "revision": 2,
+  "created_at": "2026-11-21T03:31:19+00:00",
   "files": [
     {
       "file": "phungdanhkhoa-front.zip",
-      "bytes": 7114,
-      "sha256": "c6bb425f4dd14d7ea1da40a074eac180c9a0dae42f198bd5b5ae0af51321d205",
+      "bytes": 7106,
+      "sha256": "1385ca1385d262ae3fa98d63e92487625f58fa5973869b0c2328099f3c45fd06",
       "contains_images": false,
       "images": 16,
       "images_unlabelled": 0,
@@ -25,8 +25,8 @@
     },
     {
       "file": "phungdanhkhoa-fisheye.zip",
-      "bytes": 4539,
-      "sha256": "66a64b4a3716cef138faceb532a007ed0c96ba2988da26cb6c8202914e5f100d",
+      "bytes": 4558,
+      "sha256": "a3d8b27a0860a0173e9084f5281f843d7775b1790986bad5791cce4c586551ac",
       "contains_images": false,
       "images": 12,
       "images_unlabelled": 0,

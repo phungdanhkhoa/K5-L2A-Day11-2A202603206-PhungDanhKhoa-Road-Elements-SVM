@@ -1,1 +1,17 @@
 slot,file,split,weather,scene,timeofday,tier,focus,reason,blur_note
+A01,bc5fadac-fa6dd225.jpg,val,clear,highway,daytime,core,3+ vạch làn,3 vạch làn rõ ràng (L1 dashed white, R1 solid yellow, L2 dashed white),coach kiểm tay
+A02,b3c26aff-63a0d7d6.jpg,val,clear,highway,daytime,core,vạch đứt dài,vạch đứt L1 dài liên tục nối thành 1 polyline,coach kiểm tay
+A03,b1c66a42-6f7d68ca.jpg,val,overcast,city street,daytime,core,làn bị che,vạch có đoạn bị che nối liên tục bật occluded,coach kiểm tay
+A04,b7a8e795-0ff55db2.jpg,val,overcast,city street,daytime,core,vàng đôi + direct/alternative,vạch vàng đôi L2 kind=double và drivable chia direct/alternative,coach kiểm tay
+A05,b2576c8c-2de20b8a.jpg,val,overcast,residential,daytime,core,vùng lái + mép lề,đường không vạch sơn có road_curb và drivable direct (miễn QC1-02),coach kiểm tay
+A06,b8c66e31-37045eec.jpg,val,clear,city street,daytime,core,vạch qua đường,crosswalk polygon bao các vạch dưới gầm cầu tàu điện,coach kiểm tay
+A07,b41ace08-c8468690.jpg,val,rainy,highway,daytime,core,đèn giao thông,mặt đường ướt rõ do mưa và cụm đèn xanh phía trước,coach kiểm tay
+A08,c0deebc1-16cfa791.jpg,val,overcast,city street,daytime,core,nhiều cụm đèn,nhiều cụm đèn xanh + biển phụ riêng trên biển chỉ dẫn,coach kiểm tay
+A09,c7e6d5d1-c8af9fe3.jpg,val,clear,city street,daytime,core,biển báo,nhiều biển báo giao thông trên vỉa hè + vạch cong,coach kiểm tay
+A10,b6ff1331-f6d3fba8.jpg,val,rainy,city street,daytime,core,biển phụ (coach kiểm tay),cột biển báo có biển phụ riêng dưới biển cấm đỗ + đường ướt,coach kiểm tay
+A11,c1f35f18-b529c043.jpg,val,clear,city street,dawn/dusk,core,hoàng hôn, đủ loại nhãn,hoàng hôn dusk đủ vạch vàng đôi L1 đèn xanh và biển,coach kiểm tay
+A12,c0f978fa-9b4e623f.jpg,val,clear,city street,daytime,core,phố đông, đủ loại nhãn,phố đông đủ crosswalk đèn tín hiệu biển Greene Av và vạch làn,coach kiểm tay
+A13,c179d309-b446fda3.jpg,val,rainy,highway,daytime,extra,mưa,ca mưa hạt nước trên kính chắn gió + vạch vàng L1,coach kiểm tay
+A14,ca04d99f-c1282bb7.jpg,val,clear,city street,night,extra,đêm,ca đêm night đèn tín hiệu sáng rõ + vạch vàng đôi,coach kiểm tay
+A15,be85bd88-d849c034.jpg,val,overcast,highway,daytime,extra,vạch mờ (coach kiểm tay),trời âm u cầu vượt biển cảnh báo công trường màu cam,coach kiểm tay
+A16,b6f77fda-33d2260f.jpg,val,clear,city street,dawn/dusk,extra,giao lộ phức tạp,ngã tư lớn Manhattan nhiều đèn xanh taxi và vạch qua đường,coach kiểm tay

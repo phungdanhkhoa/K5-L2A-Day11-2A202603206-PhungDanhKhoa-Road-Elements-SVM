@@ -62,4 +62,4 @@ Lint toàn lô báo 8 cảnh báo `QC1-02`. Các cảnh báo dưới đây chưa
 
 ## Quyết định
 
-**Rework.** Mẫu có **0 lỗi nặng đã xác nhận, 5 lỗi chính trên 83 nhãn (6,02%) và 0 lỗi nhẹ đã xác nhận**. Tỷ lệ lỗi chính vượt ngưỡng 5%. Sửa các lỗi trong bảng và đối chiếu lại 8 cảnh báo thiếu vạch trước khi chốt lô. [Thang mức lỗi QC 1](docs/qc_severity_road_v1.0.md)
+**Rework.** Mẫu có **0 lỗi nặng đã xác nhận, 5 lỗi chính trên 83 nhãn (6,02%) và 0 lỗi nhẹ đã xác nhận**. Tỷ lệ lỗi chính vượt ngưỡng 5%. Sửa các lỗi trong bảng và đối chiếu lại 8 cảnh báo thiếu vạch trước khi chốt lô. [Thang mức lỗi QC 1](../docs/qc_severity_road_v1.0.md)

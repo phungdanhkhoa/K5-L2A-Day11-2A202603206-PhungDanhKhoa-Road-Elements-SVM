@@ -46,7 +46,7 @@ B11 chỉ có bốn tag. Ảnh cho thấy các ô đỗ xe, gồm ô dành cho n
 
 ## 4. Phiếu QC1 nhận được và lượt sửa
 
-Nguyễn Công Quý kiểm revision 1 và kết luận **Rework** với 5 lỗi chính trên 83 nhãn trong mẫu. [Phiếu nhận được từ Quý](https://github.com/nguyencongquy/K5-L23-Day11-2A202603149-NguyenCongQuy-Road-Elements-SVM/blob/6573ff4bc51c3d6369202f0de36059c963cd6991/nguyencongquy-qc1-for-phungdanhkhoa.md)
+Nguyễn Công Quý kiểm revision 1 và kết luận **Rework** với 5 lỗi chính trên 83 nhãn trong mẫu. [Phiếu nhận được từ Quý](minh-chung/nguyencongquy-qc1-for-phungdanhkhoa.md)
 
 | Mã | Lỗi nhận được | Xử lý ở revision 3 |
 | --- | --- | --- |
